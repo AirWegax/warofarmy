@@ -1,0 +1,253 @@
+/* reset styles*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fff;
+  font-family: sans-serif;
+}
+/* smooth start (animation) */
+.body_hide {
+  opacity: 0;
+  transition: 1.9s opacity ease-in-out;
+}
+
+.body_visible {
+  opacity: 1;
+}
+/* button styles reset */
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+/* main styles */
+.amount {
+  text-align: center;
+}
+
+.amount-army {
+  margin-top: 30px;
+  color: #fff;
+}
+
+.amount-army span {
+  padding: 10px;
+  margin-top: 10px;
+  background: rgb(255,194,5);
+  background: linear-gradient(90deg, rgba(255,194,5,1) 0%, rgba(240,128,0,1) 50%, rgba(255,0,78,1) 95%);
+}
+
+.amount-power {
+  margin: 0 auto;
+  padding: 6px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bolder;
+  text-align: center;
+  border: 4px solid #000;
+  width: 300px;
+}
+
+.warriors {
+  margin-top: 30px;
+  font-weight: bolder;
+}
+
+.train {
+  text-align: center;
+}
+
+.btn {
+  background-color: #0055ff;
+  color: #fff;
+  padding: 8px;
+  margin-top: 10px;
+  font-weight: bolder;
+}
+
+.btn:hover {
+  background-color: #fff;
+  padding: 4px;
+  color: #0055ff;
+  border: 4px solid #0055ff;
+}
+
+.info {
+  margin-left: 40px;
+  margin-top: -280px
+}
+
+.info-text-about {
+  margin-top: 10px;
+  margin-left: 20px;
+  line-height: 21.5px;
+  font-weight: bold;
+}
+/* main styles */
+.enemys {
+  text-align: center;
+  justify-content: space-between;
+  margin-top: 240px
+}
+
+.enemys-about span {
+  padding: 5px;
+  background-color: #F41535;
+  color: #fff;
+}
+
+.list-enemys {
+  display: flex;
+  justify-content: space-between;
+}
+
+.enemys-one {
+  margin-top: 20px;
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.one {
+  color: #5C5C5C;
+}
+
+.two {
+  color: #9b111e;
+}
+
+.there {
+  color: #6d00e6;
+}
+
+.btn-two {
+  background-color: #E60028;
+  color: #fff;
+  padding: 8px;
+  margin-top: 10px;
+  font-weight: bolder;
+}
+
+.btn-two:hover {
+  background-color: #fff;
+  color: #e60028;
+  border: 4px solid #E60028;
+  padding: 4px;
+}
+
+.fix {
+  margin-bottom: 10px;
+}
+
+.default-train {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  color: #292CF5;
+}
+
+.more-info {
+  margin-top: -180px;
+  text-align: center;
+  margin-left: 1000px;
+  font-weight: bold;
+}
+
+.more-info-text {
+  font-size: 23px;
+}
+
+#info-text {
+  color: #666699;
+  font-size: 18px;
+  margin-top: 4px;
+}
+
+/* adaptive for tablet and phones */
+@media screen and (max-width: 1520px) {
+  .timer {
+    margin-left: 940px;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .info-text-about {
+    text-align: center;
+    margin-left: 0px;
+  }
+  .info {
+    text-align: center;
+    margin-left: 0px;
+    margin-top: 35px
+  }
+
+  .warriors {
+    font-size: 15px;
+  }
+
+  .amount-army span {
+    font-size: 31px;
+  }
+
+  .enemys {
+    text-align: center;
+    margin-top: 60px
+  }
+
+  .timer {
+    text-align: center;
+    margin-left: 0px;
+    margin-top: 60px
+  }
+
+  #timer-text {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  .list-enemys {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .amount-army span {
+    font-size: 30px;
+  }
+
+  .default-train {
+    font-size: 22px;
+  }
+  .main {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .amount-army span {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 352px) {
+  .amount-army span {
+    padding: 8px;
+    margin-top: 10px;
+    font-size: 24.05px;
+  }
+
+  .warriors {
+    font-size: 16px;  
+  }
+
+  .amount-power {
+    padding: 1px;
+  }
+}
