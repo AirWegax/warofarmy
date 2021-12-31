@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>War Of Army</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="body_hide">
+      <div class="main">
+        <div class="amount">
+          <h1 class="amount-army"><span id="amount-army">Общие кол-во армии: 0</span></h1>
+          <div class="warriors">
+            <h2 class="amount-power"><span>Бонусы армии:</span></h2>
+            <h2 class="amount-power-1"><span>Быстрая тренировка.</span></h2>
+            <h2 class="amount-power"><span>Слабости армии:</span></h2>
+            <h2 class="amount-power-1"><span>Ослабление солдатов от 20 до 40 солдатов</span></h2>
+          </div>
+        </div>
+        <div class="train">
+          <button class="btn" onclick="trainArmy()">Тренировать солдата</button>
+        </div>
+        <div class="info">
+          <h2 class="info-text">Важная информация:</h2>
+          <p class="info-text-about">Есть шанс в 10% что ваши войны при<br>атаке ослабнут
+          и вы потеряйте на 20 солдатов больше.<br>При атаке на генерала потеря увеличивается до 40 солдат<br>Также если ваши войска будут меньше ноля<br>вы сразу проиграете.Для усложнения игры<br>тренировка Армий "Повстанца" и "Генерала"<br>Начнутся сразу же. Через время<br> на вас все нападут все командиры</p>
+        </div>
+        <div class="timer">
+          <h2 class="lasttime">Доп-информация: </h2>
+          <p id="timer-text">Тренируйте для нападения как минимум 25,<br>Иначе, можно проиграть из за потери войск<br>А для генерала тренируйте 45.</p>
+        </div>
+      </div>
+      <div class="enemys">
+        <h1 class="enemys-about"><span>Противники: </span></h1>
+        <div class="list-enemys">
+          <div class="enemys-one">
+            <h2 class="enemys-one two">Повстанец 2.</h2>
+            <h2 class="amount-power" id="enemy-knight-two"><span>Бонус к тренировке: 40%</span></h2>
+            <h3 class="power-two" id="power-two">Количество Армии: 0</h3>
+            <button class="btn-two" onclick="attackEnemyTwo();" id="attack-two">Атаковать</button>
+          </div>
+          <div class="enemys-one">
+            <h2 class="enemys-one one">Кузнцец 1.</h2>
+            <h2 class="amount-power"><span>Бонус к тренировке: 35%</span></h2>
+            <h3 class="power-one" id="power-one">Количество Армии: 0</h3>
+            <button class="btn-two" onclick="attackEnemyOne();" id="attack-one">Атаковать</button>
+          </div>
+          <div class="enemys-one">
+            <h2 class="enemys-one there">Генерал 3.</h2>
+            <h2 class="amount-power" id="enemy-knight-there"><span>Бонус к тренировке: 45%</span></h2>
+            <h3 class="power-there" id="power-there">Количество Армии: 0</h3>
+            <button class="btn-two fix" onclick="attackEnemyThere();" id="attack-there">Атаковать</button>
+          </div>
+        </div>
+        <h2 class="default-train">Стандарная скорость тренировки: 1 сек</h2>
+      </div>
+      <script src="app.js"></script>
+  </body>
+</html>
