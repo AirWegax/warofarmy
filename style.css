@@ -197,14 +197,14 @@ button {
     text-align: center;
     margin-top: 60px
   }
-
-  .timer {
+  
+  .more-info {
     text-align: center;
     margin-left: 0px;
     margin-top: 60px
   }
 
-  #timer-text {
+  #info-text {
     margin-top: 10px;
   }
 }
