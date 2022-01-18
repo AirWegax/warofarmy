@@ -31,6 +31,11 @@ button {
   text-align: center;
 }
 
+.name {
+  text-align: center;
+  margin-top: 10px;
+}
+
 .amount-army {
   margin-top: 30px;
   color: #fff;
