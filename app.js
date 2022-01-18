@@ -7,7 +7,6 @@ name = prompt('Назовите отряд:');
 if ((name == '') || (name == null)) {
   if (name == null) {}
   for (;;) {
-    console.log('dsff')
     alert('Нельзя называть отряд без имени');
     name = prompt('Назовите отряд');
     if (name != null && name != '') break;
