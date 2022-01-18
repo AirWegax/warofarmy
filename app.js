@@ -1,7 +1,7 @@
 // version 0.5
 
 // name army
-const nameArmy = document.getElementById('nicname')
+const nameArmy = document.getElementById('nickname')
 let name = '';
 name = prompt('Назовите отряд:'); 
 if ((name == '') || (name == null)) {
