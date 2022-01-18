@@ -1,3 +1,21 @@
+// version 0.5
+
+// name army
+const nameArmy = document.getElementById('nicname')
+let name = '';
+name = prompt('Назовите отряд:'); 
+if ((name == '') || (name == null)) {
+  if (name == null) {}
+  for (;;) {
+    console.log('dsff')
+    alert('Нельзя называть отряд без имени');
+    name = prompt('Назовите отряд');
+    if (name != null && name != '') break;
+  }
+  nameArmy.innerHTML = 'Имя отряда: ' + name;
+}
+nameArmy.innerHTML = 'Имя отряда: ' + name;
+
 // stop amountArmyOneSeT
 let tOne;
 function stopOne() {
@@ -17,6 +35,7 @@ function stopThere() {
 setTimeout(function(){
   document.body.classList.add('body_visible');
 }, 50)
+
 // my army variables
 const amountArmy = document.getElementById('amount-army');
 let warriors = 0;
@@ -85,12 +104,29 @@ function attackEnemyOne() {
   }
   warriors = resultArmy;
   warriorsOne = resultArmyOne;
+  if (resultArmyOne == 0) {
+    warriorsOne = 0;
+    resultArmyOne = 0;
+  }
   amountArmy.innerHTML = 'Общие кол-во армии:' + ' ' + resultArmy;
   amountArmyOne.innerHTML = 'Количество Армии:' + ' ' + resultArmyOne;
   // Conditions for function attackEnemyOne()
   if (warriors < 0) {
     alert('Войско полностью погибло в результате нападения на "Кузнеца", Поражение !');
-    window.close();
+    let result = confirm('Открыть новую вкладку ?')
+    if (result == true) {
+      window.open("index.html");
+    } if (result == false) {
+      amountArmy.innerHTML = 'Общие кол-во армии: ' + warriors;
+      amountArmyThere.innerHTML = 'Вы проиграли';
+      amountArmyOne.innerHTML = 'Отряд ' + name + ' повержен';
+      amountArmyTwo.innerHTML = 'Вы проиграли';
+      warriors = 0;
+      amountArmy.innerHTML = 'Общие кол-во армии: ' + warriors;
+      stopThere();
+      stopTwo();
+      stopOne();
+    }
   } else if (resultArmyOne < 0) {
     amountArmyOne.innerHTML = 'Враг повержен';
     stopOne();
@@ -126,8 +162,22 @@ function attackEnemyTwo() {
   // Conditions for function attackEnemyOne()
   if (warriors < 0) {
     alert('Войско полностью погибло в результате нападения на "Повстанца", Поражение !');
-    window.close();
+    let result = confirm('Открыть новую вкладку ?')
+    if (result == true) {
+      window.open("index.html");
+    } if (result == false) {
+      amountArmy.innerHTML = 'Общие кол-во армии: ' + warriors;
+      amountArmyOne.innerHTML = 'Вы проиграли';
+      amountArmyTwo.innerHTML = 'Отряд "' + name + '" повержен';
+      amountArmyThere.innerHTML = 'Вы проиграли';
+      warriors = 0;
+      amountArmy.innerHTML = 'Общие кол-во армии: ' + warriors;
+      stopThere();
+      stopTwo();
+      stopOne();
+    }
   } else if (resultArmyTwo < 0) {
+    resultArmyTwo = 0;
     amountArmyTwo.innerHTML = 'Враг повержен';
     stopTwo();
     // code delete onlclick (off)
@@ -146,7 +196,7 @@ function attackEnemyThere() {
   //result of there army
   resultArmy = warriors - warriorsThere;
   resultArmyThere = warriorsThere - warriors;
-  //chance of reducing the total numver of "warriors"
+  //chance of reducing the total number of "warriors"
   if ((mth == 20) || (mth == 30) || (mth == 40) || (mth == 12) || (mth == 30)) {
     alert('Потеря 20 войнов!');
     resultArmy = resultArmy - 40;
@@ -161,13 +211,28 @@ function attackEnemyThere() {
   amountArmyThere.innerHTML = 'Количество Армии: ' + ' ' + resultArmyThere;
   // Conditions for function attackEnemyOne()
   if (warriors < 0) {
+    amountArmyOne.innerHTML = 'Количество Армии: ' + warriorsOne;
+    warriorsOne = 0;
     alert('Войско полностью погибло в результате нападения на "Генерала", Поражение !');
-    window.close();
+    warriors = 0;
+    amountArmy.innerHTML = 'Общие кол-во армии: ' + warriors;
+    let result = confirm('Открыть новую вкладку ?')
+    if (result == true) {
+      window.open("index.html");
+    } if (result == false) {
+      warriors = 0;
+      amountArmy.innerHTML = 'Общие кол-во армии: ' + warriors;
+      amountArmyThere.innerHTML = 'Отряд' + name + 'повержен';
+      amountArmyTwo.innerHTML = 'Враг повержен';
+      amountArmyOne.innerHTML = 'Враг повержен';
+      stopThere();
+      stopTwo();
+      stopOne();
+    }
   } else if (resultArmyThere < 0) {
-    amountArmyThere.innerHTML = 'Враг повержен';
-    stopThere();
+      amountArmyThere.innerHTML = 'Враг повержен';
+      stopThere();
     // code delete onlclick (off)
     btnAttackThere.removeAttribute('onclick');
   }
 }
-
