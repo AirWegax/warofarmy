@@ -235,3 +235,20 @@ function attackEnemyThere() {
     btnAttackThere.removeAttribute('onclick');
   }
 }
+
+// attack all
+function attackAllArmy() {
+  let resultAll = 0;
+  resultAll = warriorsOne + warriorsTwo + warriorsThere;
+  warriorsOne = warriorsOne - warriors;
+  warriorsTwo = warriorsTwo - warriors;
+  warriorsThere = warriorsThere - warriors;
+  warriors = warriors - resultAll;
+  
+  alert('Общая атака !')
+  
+  amountArmy.innerHTML = 'Общие кол-во армии: ' + warriors;
+  amountArmyThere.innerHTML = 'Количество Армии: ' + warriorsThere;
+  amountArmyOne.innerHTML = 'Количество Армии: ' + warriorsOne;
+  amountArmyTwo.innerHTML = 'Количество Армии: ' + warriorsTwo;
+}
