@@ -237,6 +237,7 @@ function attackEnemyThere() {
 }
 
 // attack all
+setInterval(attackAllArmy, 10000)
 function attackAllArmy() {
   let resultAll = 0;
   resultAll = warriorsOne + warriorsTwo + warriorsThere;
@@ -251,4 +252,30 @@ function attackAllArmy() {
   amountArmyThere.innerHTML = 'Количество Армии: ' + warriorsThere;
   amountArmyOne.innerHTML = 'Количество Армии: ' + warriorsOne;
   amountArmyTwo.innerHTML = 'Количество Армии: ' + warriorsTwo;
+  
+  if (warriors < 0) {
+    amountArmyOne.innerHTML = 'Количество Армии: ' + warriorsOne;
+    warriorsOne = 0;
+    alert('Войско полностью погибло в результате общего нападения, Поражение !');
+    warriors = 0;
+    amountArmy.innerHTML = 'Общие кол-во армии: ' + warriors;
+    let result = confirm('Открыть новую вкладку ?')
+  if (result == true) {
+      window.open("index.html");
+  } if (result == false) {
+      warriors = 0;
+      amountArmy.innerHTML = 'Общие кол-во армии: ' + warriors;
+      amountArmyThere.innerHTML = 'Отряд' + name + 'повержен';
+      amountArmyTwo.innerHTML = 'Враг повержен';
+      amountArmyOne.innerHTML = 'Враг повержен';
+      stopThere();
+      stopTwo();
+      stopOne();
+    }
+  } else if (resultArmyThere < 0) {
+      amountArmyThere.innerHTML = 'Враг повержен';
+      stopThere();
+      // code delete onlclick (off)
+      btnAttackThere.removeAttribute('onclick');
+  }
 }
